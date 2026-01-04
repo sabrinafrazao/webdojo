@@ -1,0 +1,6 @@
+- Se o placeholder não for algo intuitivo de se entender, melhor não usá-lo
+
+- Class que são ituitivas com nomes coerentes é bom usar, por exemplo em modal
+
+- 
+
