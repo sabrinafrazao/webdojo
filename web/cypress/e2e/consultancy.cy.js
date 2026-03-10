@@ -118,7 +118,7 @@ describe('consulting form', ()=> {
 
 
 
-        cy.get('.modal-header')
+        cy.get('.modal-header', {timeout:7000})
             .parent()
             .should('be.visible')
             .find('.modal-content')

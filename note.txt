@@ -2,5 +2,12 @@
 
 - Class que são ituitivas com nomes coerentes é bom usar, por exemplo em modal
 
-- 
+- Para utilização e MouserOver se necessita instalar um plugin - npm install cypress-real-events .
+  Importar no Commands.js - import 'cypress-real-events'
+
+  warp - pega o valor de uma array ou elemento e transforma em um objeto cypress para conseguir usar os recursos do cypress
+  nesse objeto
+
+  its - Função do cypress para obter propriedades de elementos ao testar apis, cokies etc.
+  
 
