@@ -1,10 +1,11 @@
 describe('Links abrindo nova guia/janela', ()=> {
 
+    
+    beforeEach(() =>{
+        cy.login()
+    })
+
     it('Validando o atributo do link do instagram', ()=>{
-
-        cy.start();
-        cy.submitLoginForm('papito@webdojo.com', 'katana123');
-
 
         // _blank -> propriedade que faz o link abrir em uma nova aba
 
@@ -14,9 +15,6 @@ describe('Links abrindo nova guia/janela', ()=> {
     });
 
     it('Acessa link de termos de uso removendo o target blank', () =>{
-
-        cy.start();
-        cy.submitLoginForm('papito@webdojo.com', 'katana123');
 
         cy.contains('Formulários').click();
 

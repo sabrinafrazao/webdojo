@@ -2,8 +2,7 @@ describe('Kanban board', () => {
 
     it('Deve mover uma tarefa de todo para done e atualizar o board', () => {
 
-        cy.start()
-        cy.submitLoginForm('papito@webdojo.com', 'katana123')
+        cy.login()
         cy.contains('Kanban').click()
 
         // Clicar e arrastar usando js e o cy
