@@ -8,7 +8,7 @@ describe('Iframe', () =>{
         cy.submitLoginForm('papito@webdojo.com', 'katana123');
         cy.contains('Video').click()
 
-        cy.get('iframe[title="Video"')
+        cy.get('iframe[title="Video Player"]')
             .should('exist')
             .its('0.contentDocument.body')
             .then(cy.wrap)
@@ -23,9 +23,5 @@ describe('Iframe', () =>{
             .should('be.visible')
 
         
-
-
-
-
     });
 });
