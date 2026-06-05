@@ -22,7 +22,7 @@ describe('consulting form', () => {
         cy.validadeConsultancyModal()
     })
 
-    it.only('Check required fields', () => {
+    it('Check required fields', () => {
 
         cy.submitConsultacyForm()
 
