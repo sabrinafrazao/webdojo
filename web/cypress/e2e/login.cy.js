@@ -1,8 +1,6 @@
-describe('Login', () => {
+import { getCurrentDate } from '../support/utils'
 
-  function getCurrentDate() {
-    return new Date().toLocaleDateString('pt-BR');
-  }
+describe('Login', () => {
 
   it.only('Login successful', () => {
     cy.start()

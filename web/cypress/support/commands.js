@@ -1,5 +1,6 @@
 import 'cypress-real-events'
 import './actions/consultancy.actions'
+import { getCurrentDate } from '../support/utils'
 
 Cypress.Commands.add("start", () => {
     cy.viewport(1440, 900)
@@ -27,9 +28,27 @@ Cypress.Commands.add('goTo', (buttonName, pageTitle) => {
 })
 
 //Helper
-Cypress.Commands.add('login', () => {
+Cypress.Commands.add('login', (ui = false) => {
 
-    cy.start();
-    cy.submitLoginForm('papito@webdojo.com', 'katana123');
+    if (ui == ture) {
+        cy.start();
+        cy.submitLoginForm('papito@webdojo.com', 'katana123');
+
+    } else {
+
+        const token = 'e1033d63a53fe66c0fd3451c7fd8f617'
+        const loginDate = getCurrentDate()
+
+        cy.setCookie('login_date', loginDate)
+
+        cy.visit('http://localhost:3000/dashboard', {
+
+            onBeforeLoad(win) {
+
+                win.localStorage.setItem('token', token)
+            }
+        })
+    }
+
 })
 
