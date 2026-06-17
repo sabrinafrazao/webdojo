@@ -3,8 +3,7 @@ import './actions/consultancy.actions'
 import { getCurrentDate } from '../support/utils'
 
 Cypress.Commands.add("start", () => {
-    cy.viewport(1440, 900)
-    cy.visit('http://localhost:3000')
+    cy.visit('/')
 })
 
 Cypress.Commands.add('submitLoginForm', (email, senha) => {
@@ -30,7 +29,7 @@ Cypress.Commands.add('goTo', (buttonName, pageTitle) => {
 //Helper
 Cypress.Commands.add('login', (ui = false) => {
 
-    if (ui == ture) {
+    if (ui == true) {
         cy.start();
         cy.submitLoginForm('papito@webdojo.com', 'katana123');
 
@@ -41,7 +40,7 @@ Cypress.Commands.add('login', (ui = false) => {
 
         cy.setCookie('login_date', loginDate)
 
-        cy.visit('http://localhost:3000/dashboard', {
+        cy.visit('/dashboard', {
 
             onBeforeLoad(win) {
 
